@@ -1,0 +1,68 @@
+.navigation {
+	li {
+		margin-right: 50px;
+		position: relative;
+	}
+	li:last-child {
+		margin-right: 0px;
+	}
+}
+
+.navigation {
+	.link {
+		font-weight: 500;
+		color: $mainTextColor;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		display: block;
+		transition-property: color;
+		transition-duration: 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	.link:focus,
+	.link:hover {
+		color: $colorTartet;
+	}
+}
+
+.navigation {
+	.current {
+		color: $colorTartet;
+	}
+}
+.current::before {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: "";
+	opacity: 1;
+	display: block;
+	height: 4px;
+	width: 100%;
+	background-color: $focusFormColor;
+	border-radius: 2px;
+	bottom: -1px;
+}
+.link::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: "";
+	opacity: 0;
+	height: 4px;
+	width: 100%;
+	border-radius: 2px;
+	background-color: $focusFormColor;
+	display: block;
+	bottom: -1px;
+
+	transition-property: opacity;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover::after,
+.link:focus::after,
+.link:active::after {
+	opacity: 1;
+}

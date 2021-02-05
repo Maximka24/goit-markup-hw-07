@@ -1,0 +1,49 @@
+.footerForm {
+	width: 100%;
+	display: flex;
+
+	.footerInput {
+		padding-left: 16px;
+		background-color: $bgFooter;
+		width: 358px;
+		height: 50px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-sizing: border-box;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+		border-radius: 4px;
+
+		transition-property: border, outline;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+
+		&:focus {
+			border: 1px solid $focusFormColor;
+			outline: 0;
+			color: #ffffff;
+		}
+	}
+	.footerFormButton {
+		margin-left: 12px;
+		min-width: 200px;
+		height: 50px;
+		padding: 10px 30px;
+		font-family: $mainFontFamil;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.87;
+		color: $textButtonHover;
+		background: $bgDutton;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+		border-radius: 4px;
+		border: 0;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		& svg {
+			margin-left: 10px;
+			fill: #ffffff;
+		}
+	}
+}

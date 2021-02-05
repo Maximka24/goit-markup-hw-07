@@ -1,0 +1,14 @@
+.dignity {
+	padding-top: 94px;
+	padding-bottom: 94px;
+
+	& ul {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.advantageTitle {
+		margin: 0;
+		display: none;
+	}
+}

@@ -1,0 +1,210 @@
+.form {
+	padding: 40px;
+
+	h1 {
+		margin: 0;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 1.15;
+		text-align: center;
+		letter-spacing: 0.03em;
+		color: #212121;
+	}
+	.submit {
+		margin-top: 30px;
+		min-width: 200px;
+		padding: 10px 32px;
+		font-family: $mainFontFamil;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.87;
+		color: $textButtonHover;
+		background: $bgDutton;
+		border-radius: 4px;
+		border: 0;
+		cursor: pointer;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	}
+}
+
+.formBar {
+	position: relative;
+	margin-top: 30px;
+	display: block;
+
+	.formInput {
+		margin: 50;
+		padding: 11px;
+		padding-left: 35px;
+		width: 100%;
+		border: 1px solid rgba(33, 33, 33, 0.2);
+		border-radius: 4px;
+
+		transition-property: border, outline;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+
+		&:focus {
+			border: 1px solid $focusFormColor;
+			outline: 0;
+		}
+		&:focus + .svgModal {
+			fill: $focusFormColor;
+		}
+
+		&:focus ~ .formText,
+		&:not(:placeholder-shown) ~ .formText {
+			transform: translateY(-40px);
+			left: 0;
+		}
+	}
+
+	.svgModal {
+		position: absolute;
+		top: 50%;
+		left: 12px;
+		transform: translateY(-50%);
+		transition-property: fill;
+		transition-duration: 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.formText {
+		position: absolute;
+		top: 50%;
+		left: 35px;
+		transform: translateY(-50%);
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 1.17;
+		letter-spacing: 0.01em;
+		color: $mainFormcolorText;
+
+		transition-property: transform, left;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+
+.formBarTextarea {
+	position: relative;
+	display: block;
+	margin: 0;
+	margin-top: 30px;
+
+	.formTextarea {
+		margin: 0;
+		padding: 11px;
+		padding-left: 16px;
+		width: 100%;
+		border: 1px solid rgba(33, 33, 33, 0.2);
+		border-radius: 4px;
+		resize: none;
+
+		transition-property: border, outline;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+
+		&:focus {
+			border: 1px solid $focusFormColor;
+			outline: 0;
+		}
+
+		&:focus + .textTextarea,
+		&:not(:placeholder-shown) + .textTextarea {
+			transform: translateY(-35px);
+			left: 0;
+		}
+	}
+	.textTextarea {
+		position: absolute;
+		left: 16px;
+		top: 12px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 1.17;
+		letter-spacing: 0.01em;
+		color: $mainFormcolorText;
+
+		transition-property: transform, left;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+
+.formCheckbox {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+
+	.checkbox {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+
+		&:checked + .iconCheck {
+			background-color: $focusFormColor;
+			background-image: url(../img/check-ok.svg);
+			background-size: contain;
+			background-origin: border-box;
+			border: 0;
+		}
+		&:hover ~ .textCheckbox {
+			cursor: pointer;
+		}
+
+		&:focus ~ .iconCheck {
+			border-radius: 2px;
+			border: 2px solid $focusFormColor;
+		}
+	}
+
+	.iconCheck {
+		margin-right: 8px;
+		width: 16px;
+		height: 15px;
+		border: 2px solid #212121;
+		border-radius: 2px;
+
+		transition-property: outline, border-radius;
+		transition-duration: 250ms, 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+			cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.textCheckbox {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 1.71;
+		letter-spacing: 0.03em;
+		color: $mainFormcolorText;
+
+		transition-property: cursor;
+		transition-duration: 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+		& a {
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 1.71;
+			letter-spacing: 0.03em;
+			text-decoration-line: underline;
+			color: $focusFormColor;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.marginContacts {
+	margin: 0;
+	display: flex;
+	margin-left: auto;
+
+	li {
+		margin-right: 50px;
+		align-items: center;
+	}
+	li:last-child {
+		margin-right: 0px;
+	}
+}
+
+.contacts {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	color: $colorTextParagraph;
+	margin: 0;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	fill: $colorIconContacts;
+
+	transition-property: color, fill;
+	transition-duration: 250ms, 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+		cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:hover,
+	&:focus {
+		color: $colorTartet;
+		fill: $colorTartet;
+	}
+
+	.iconHeader {
+		margin-right: 10px;
+	}
+}

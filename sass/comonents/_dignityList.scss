@@ -1,0 +1,36 @@
+.dignityList {
+	width: 270px;
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+
+	.iconDignity {
+		height: 120px;
+		margin-bottom: 30px;
+		background: $colorBgTeamIcon;
+		border-radius: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.advantage {
+		text-transform: uppercase;
+		margin: 0;
+		margin-bottom: 10px;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 1.14;
+		letter-spacing: 0.03em;
+		color: $mainTextColor;
+	}
+	.advantageParagraph {
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 1.71;
+		letter-spacing: 0.03em;
+		color: $colorTextParagraph;
+		margin: 0;
+	}
+}

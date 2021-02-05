@@ -1,0 +1,30 @@
+.container {
+	.hero & {
+		width: 700px;
+	}
+
+	.main-header {
+		text-transform: uppercase;
+		font-weight: 900;
+		font-size: 44px;
+		line-height: 1.36;
+		letter-spacing: 0.06em;
+		color: $colorTextH2;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+
+	.button {
+		min-width: 200px;
+		padding: 10px 32px;
+		font-family: $mainFontFamil;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.87;
+		color: $textButtonHover;
+		background: $bgDutton;
+		border-radius: 4px;
+		border: 0;
+		cursor: pointer;
+	}
+}
