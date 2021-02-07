@@ -14,28 +14,28 @@
 			height: 44px;
 			background: rgba(255, 255, 255, 0.1);
 			border-radius: 50%;
-
-			.colorIconFt {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 44px;
-				height: 44px;
-				fill: $colorIcon;
-
-				transition-property: fill, background, border-radius;
-				transition-duration: 250ms;
-				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			}
-			.colorIconFt:hover,
-			.colorIconFt:focus {
-				fill: #ffffff;
-				border-radius: 50%;
-				background: $colorTartet;
-			}
 		}
 		& li:not(:last-child) {
 			margin-right: 10px;
 		}
+	}
+}
+
+.colorIconFt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	fill: $colorIcon;
+
+	transition-property: fill, background, border-radius;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	&:hover,
+	&:focus {
+		fill: #ffffff;
+		border-radius: 50%;
+		background: $colorTartet;
 	}
 }

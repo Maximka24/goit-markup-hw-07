@@ -109,8 +109,7 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navigation .link:focus,
-.navigation .link:hover {
+.navigation .link:focus, .navigation .link:hover {
   color: #2196f3;
 }
 
@@ -194,13 +193,16 @@ header .container {
 }
 
 .hero {
+  display: block;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
   background: #2f303a;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/Img-teams.jpg");
-  width: 1600px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
   height: 600px;
+  margin: 0;
   margin-right: auto;
   margin-left: auto;
   border: 0px;
@@ -324,33 +326,6 @@ header .container {
   display: block;
 }
 
-.formBar .formInput {
-  margin: 50;
-  padding: 11px;
-  padding-left: 35px;
-  width: 100%;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  transition-property: border, outline;
-  transition-duration: 250ms, 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.formBar .formInput:focus {
-  border: 1px solid #2196f3;
-  outline: 0;
-}
-
-.formBar .formInput:focus + .svgModal {
-  fill: #2196f3;
-}
-
-.formBar .formInput:focus ~ .formText,
-.formBar .formInput:not(:placeholder-shown) ~ .formText {
-  transform: translateY(-40px);
-  left: 0;
-}
-
 .formBar .svgModal {
   position: absolute;
   top: 50%;
@@ -377,35 +352,38 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.formBarTextarea {
-  position: relative;
-  display: block;
-  margin: 0;
-  margin-top: 30px;
-}
-
-.formBarTextarea .formTextarea {
-  margin: 0;
+.formInput {
+  margin: 50;
   padding: 11px;
-  padding-left: 16px;
+  padding-left: 35px;
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  resize: none;
   transition-property: border, outline;
   transition-duration: 250ms, 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.formBarTextarea .formTextarea:focus {
+.formInput:focus {
   border: 1px solid #2196f3;
   outline: 0;
 }
 
-.formBarTextarea .formTextarea:focus + .textTextarea,
-.formBarTextarea .formTextarea:not(:placeholder-shown) + .textTextarea {
-  transform: translateY(-35px);
+.formInput:focus + .svgModal {
+  fill: #2196f3;
+}
+
+.formInput:focus ~ .formText,
+.formInput:not(:placeholder-shown) ~ .formText {
+  transform: translateY(-40px);
   left: 0;
+}
+
+.formBarTextarea {
+  position: relative;
+  display: block;
+  margin: 0;
+  margin-top: 30px;
 }
 
 .formBarTextarea .textTextarea {
@@ -423,38 +401,34 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.formTextarea {
+  margin: 0;
+  padding: 11px;
+  padding-left: 16px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  transition-property: border, outline;
+  transition-duration: 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.formTextarea:focus {
+  border: 1px solid #2196f3;
+  outline: 0;
+}
+
+.formTextarea:focus + .textTextarea,
+.formTextarea:not(:placeholder-shown) + .textTextarea {
+  transform: translateY(-35px);
+  left: 0;
+}
+
 .formCheckbox {
   margin-top: 20px;
   display: flex;
   align-items: center;
-}
-
-.formCheckbox .checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.formCheckbox .checkbox:checked + .iconCheck {
-  background-color: #2196f3;
-  background-image: url(../img/check-ok.svg);
-  background-size: contain;
-  background-origin: border-box;
-  border: 0;
-}
-
-.formCheckbox .checkbox:hover ~ .textCheckbox {
-  cursor: pointer;
-}
-
-.formCheckbox .checkbox:focus ~ .iconCheck {
-  border-radius: 2px;
-  border: 2px solid #2196f3;
 }
 
 .formCheckbox .iconCheck {
@@ -490,12 +464,40 @@ header .container {
   color: #2196f3;
 }
 
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox:checked + .iconCheck {
+  background-color: #2196f3;
+  background-image: url(../img/check-ok.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border: 0;
+}
+
+.checkbox:hover ~ .textCheckbox {
+  cursor: pointer;
+}
+
+.checkbox:focus ~ .iconCheck {
+  border-radius: 2px;
+  border: 2px solid #2196f3;
+}
+
 .footerForm {
   width: 100%;
   display: flex;
 }
 
-.footerForm .footerInput {
+.footerInput {
   padding-left: 16px;
   background-color: #2f303a;
   width: 358px;
@@ -509,13 +511,13 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footerForm .footerInput:focus {
+.footerInput:focus {
   border: 1px solid #2196f3;
   outline: 0;
   color: #ffffff;
 }
 
-.footerForm .footerFormButton {
+.footerFormButton {
   margin-left: 12px;
   min-width: 200px;
   height: 50px;
@@ -534,7 +536,7 @@ header .container {
   align-items: center;
 }
 
-.footerForm .footerFormButton svg {
+.footerFormButton svg {
   margin-left: 10px;
   fill: #ffffff;
 }
@@ -687,13 +689,13 @@ header .container {
   margin-bottom: 16px;
 }
 
-.person .iconTeam {
+.iconTeam {
   width: 206px;
   display: flex;
   align-items: center;
 }
 
-.person .iconTeam li {
+.iconTeam li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -702,7 +704,11 @@ header .container {
   width: 44px;
 }
 
-.person .iconTeam li .colorIcon {
+.iconTeam li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.colorIcon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -714,15 +720,10 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.person .iconTeam li .colorIcon:hover,
-.person .iconTeam li .colorIcon:focus {
+.colorIcon:hover, .colorIcon:focus {
   fill: #ffffff;
   border-radius: 50%;
   background: #2196f3;
-}
-
-.person .iconTeam li:not(:last-child) {
-  margin-right: 10px;
 }
 
 .clients {
@@ -752,7 +753,7 @@ header .container {
   margin-right: 0px;
 }
 
-.iconClients .clientsList {
+.clientsList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -766,7 +767,7 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.iconClients .clientsList:focus, .iconClients .clientsList:hover {
+.clientsList:focus, .clientsList:hover {
   fill: #2196f3;
   border: 1px solid #2196f3;
 }
@@ -777,7 +778,7 @@ header .container {
   padding-bottom: 60px;
 }
 
-.footerBg .containerFooter {
+.containerFooter {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -788,7 +789,7 @@ header .container {
   padding-right: 15px;
 }
 
-.footerBg .containerFooter .connect {
+.containerFooter .connect {
   font-size: 14px;
   line-height: 1.14;
   color: #ffffff;
@@ -805,11 +806,11 @@ header .container {
   margin-bottom: 9px;
 }
 
-.footerInfo .marginMailto {
+.marginMailto {
   margin-bottom: 9px;
 }
 
-.footerInfo .marginMailto .contactsFooter {
+.marginMailto .contactsFooter {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -821,7 +822,7 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footerInfo .marginMailto .contactsFooter:hover, .footerInfo .marginMailto .contactsFooter:focus {
+.marginMailto .contactsFooter:hover, .marginMailto .contactsFooter:focus {
   color: #2196f3;
 }
 
@@ -843,7 +844,11 @@ header .container {
   border-radius: 50%;
 }
 
-.footerIcon .iconTeam li .colorIconFt {
+.footerIcon .iconTeam li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.colorIconFt {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -855,15 +860,10 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footerIcon .iconTeam li .colorIconFt:hover,
-.footerIcon .iconTeam li .colorIconFt:focus {
+.colorIconFt:hover, .colorIconFt:focus {
   fill: #ffffff;
   border-radius: 50%;
   background: #2196f3;
-}
-
-.footerIcon .iconTeam li:not(:last-child) {
-  margin-right: 10px;
 }
 
 .mainPortfolio {
@@ -944,12 +944,18 @@ header .container {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portfolioShadow .portfolioImge {
+.portfolioShadow:hover .portfolioText,
+.portfolioShadow:focus .portfolioText {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.portfolioImge {
   position: relative;
   overflow: hidden;
 }
 
-.portfolioShadow .portfolioImge .portfolioText {
+.portfolioImge .portfolioText {
   position: absolute;
   top: 0;
   left: 0;
@@ -972,20 +978,14 @@ header .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolioShadow:hover .portfolioText,
-.portfolioShadow:focus .portfolioText {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.portfolioShadow .mainList {
+.mainList {
   padding: 20px 24px;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
 }
 
-.portfolioShadow .mainList .activity {
+.mainList .activity {
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
@@ -995,7 +995,7 @@ header .container {
   margin-bottom: 4px;
 }
 
-.portfolioShadow .mainList .activityProf {
+.mainList .activityProf {
   margin: 0;
   font-weight: normal;
   font-size: 16px;

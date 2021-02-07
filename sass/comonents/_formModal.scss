@@ -34,34 +34,6 @@
 	margin-top: 30px;
 	display: block;
 
-	.formInput {
-		margin: 50;
-		padding: 11px;
-		padding-left: 35px;
-		width: 100%;
-		border: 1px solid rgba(33, 33, 33, 0.2);
-		border-radius: 4px;
-
-		transition-property: border, outline;
-		transition-duration: 250ms, 250ms;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
-			cubic-bezier(0.4, 0, 0.2, 1);
-
-		&:focus {
-			border: 1px solid $focusFormColor;
-			outline: 0;
-		}
-		&:focus + .svgModal {
-			fill: $focusFormColor;
-		}
-
-		&:focus ~ .formText,
-		&:not(:placeholder-shown) ~ .formText {
-			transform: translateY(-40px);
-			left: 0;
-		}
-	}
-
 	.svgModal {
 		position: absolute;
 		top: 50%;
@@ -90,6 +62,33 @@
 			cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
+.formInput {
+	margin: 50;
+	padding: 11px;
+	padding-left: 35px;
+	width: 100%;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	transition-property: border, outline;
+	transition-duration: 250ms, 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+		cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:focus {
+		border: 1px solid $focusFormColor;
+		outline: 0;
+	}
+	&:focus + .svgModal {
+		fill: $focusFormColor;
+	}
+
+	&:focus ~ .formText,
+	&:not(:placeholder-shown) ~ .formText {
+		transform: translateY(-40px);
+		left: 0;
+	}
+}
 
 .formBarTextarea {
 	position: relative;
@@ -97,31 +96,6 @@
 	margin: 0;
 	margin-top: 30px;
 
-	.formTextarea {
-		margin: 0;
-		padding: 11px;
-		padding-left: 16px;
-		width: 100%;
-		border: 1px solid rgba(33, 33, 33, 0.2);
-		border-radius: 4px;
-		resize: none;
-
-		transition-property: border, outline;
-		transition-duration: 250ms, 250ms;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
-			cubic-bezier(0.4, 0, 0.2, 1);
-
-		&:focus {
-			border: 1px solid $focusFormColor;
-			outline: 0;
-		}
-
-		&:focus + .textTextarea,
-		&:not(:placeholder-shown) + .textTextarea {
-			transform: translateY(-35px);
-			left: 0;
-		}
-	}
 	.textTextarea {
 		position: absolute;
 		left: 16px;
@@ -139,38 +113,36 @@
 			cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
+.formTextarea {
+	margin: 0;
+	padding: 11px;
+	padding-left: 16px;
+	width: 100%;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	resize: none;
+
+	transition-property: border, outline;
+	transition-duration: 250ms, 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+		cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:focus {
+		border: 1px solid $focusFormColor;
+		outline: 0;
+	}
+
+	&:focus + .textTextarea,
+	&:not(:placeholder-shown) + .textTextarea {
+		transform: translateY(-35px);
+		left: 0;
+	}
+}
 
 .formCheckbox {
 	margin-top: 20px;
 	display: flex;
 	align-items: center;
-
-	.checkbox {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		margin: -1px;
-		border: 0;
-		padding: 0;
-		clip: rect(0 0 0 0);
-		overflow: hidden;
-
-		&:checked + .iconCheck {
-			background-color: $focusFormColor;
-			background-image: url(../img/check-ok.svg);
-			background-size: contain;
-			background-origin: border-box;
-			border: 0;
-		}
-		&:hover ~ .textCheckbox {
-			cursor: pointer;
-		}
-
-		&:focus ~ .iconCheck {
-			border-radius: 2px;
-			border: 2px solid $focusFormColor;
-		}
-	}
 
 	.iconCheck {
 		margin-right: 8px;
@@ -206,5 +178,31 @@
 			text-decoration-line: underline;
 			color: $focusFormColor;
 		}
+	}
+}
+.checkbox {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+
+	&:checked + .iconCheck {
+		background-color: $focusFormColor;
+		background-image: url(../img/check-ok.svg);
+		background-size: contain;
+		background-origin: border-box;
+		border: 0;
+	}
+	&:hover ~ .textCheckbox {
+		cursor: pointer;
+	}
+
+	&:focus ~ .iconCheck {
+		border-radius: 2px;
+		border: 2px solid $focusFormColor;
 	}
 }

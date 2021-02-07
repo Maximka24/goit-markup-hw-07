@@ -18,18 +18,17 @@
 		transition-property: color;
 		transition-duration: 250ms;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	}
-	.link:focus,
-	.link:hover {
-		color: $colorTartet;
-	}
-}
 
-.navigation {
+		&:focus,
+		&:hover {
+			color: $colorTartet;
+		}
+	}
 	.current {
 		color: $colorTartet;
 	}
 }
+
 .current::before {
 	position: absolute;
 	left: 0;
